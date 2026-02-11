@@ -25,9 +25,16 @@
     localStorage.setItem("cv_theme", theme);
   }
 
-  // Load saved theme
+  // Load saved theme, otherwise follow system preference
   const saved = localStorage.getItem("cv_theme");
-  if (saved === "light") setTheme("light");
+  if (saved === "light" || saved === "dark") {
+    setTheme(saved);
+  } else {
+    const prefersLight =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: light)").matches;
+    setTheme(prefersLight ? "light" : "dark");
+  }
 
   btnTheme?.addEventListener("click", () => {
     const isLight = root.getAttribute("data-theme") === "light";
@@ -43,18 +50,31 @@
     const email = emailLink?.textContent?.trim() || "";
     if (!email) return;
 
+    // Try Clipboard API first
     try {
-      await navigator.clipboard.writeText(email);
-      showToast("Email copied");
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(email);
+        showToast("Email copied");
+        return;
+      }
     } catch {
-      // Fallback
+      // fall through to legacy method
+    }
+
+    // Legacy fallback
+    try {
       const tmp = document.createElement("textarea");
       tmp.value = email;
+      tmp.setAttribute("readonly", "");
+      tmp.style.position = "fixed";
+      tmp.style.left = "-9999px";
       document.body.appendChild(tmp);
       tmp.select();
       document.execCommand("copy");
       document.body.removeChild(tmp);
       showToast("Email copied");
+    } catch {
+      showToast("Copy failed");
     }
   });
 })();

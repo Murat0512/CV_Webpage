@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Murat Karabiyik — Junior Software Developer CV</title>
-  <meta name="description" content="CV of Murat Karabiyik — Junior Software Developer (Career Transition)" />
+  <title>Murat Karabiyik — Junior Full Stack Developer CV</title>
+  <meta name="description" content="CV of Murat Karabiyik — Junior Full Stack Developer (Career Transition)" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -24,7 +24,7 @@
     <section class="card header">
       <div class="header__left">
         <h1 class="name">MURAT KARABIYIK</h1>
-        <p class="role">Junior Software Developer (Career Transition)</p>
+        <p class="role">Junior Full Stack Developer</p>
         <p class="location">London — United Kingdom</p>
       </div>
 
@@ -52,23 +52,22 @@
     <section class="card">
       <h2>Professional Profile</h2>
       <p>
-        Junior Software Developer transitioning from Civil Engineering, bringing a disciplined engineering mindset,
-        structured problem-solving approach, and strong documentation practices into software development.
-        Trained in JavaScript, TypeScript, Python, SQL, Angular, Node.js/Express, and Django, with hands-on experience
-        through training projects and exercises.
+        Junior Full Stack Developer transitioning from Civil Engineering, bringing a disciplined engineering mindset,
+        strong documentation habits, and structured problem-solving into software delivery. Experienced building and
+        deploying practical applications across frontend and backend, including authentication, file uploads, reporting,
+        and data validation.
       </p>
       <p>
-        Currently focused on building small full-stack applications using Angular (TypeScript), REST APIs, and SQL
-        databases as part of structured learning. Seeking an entry-level software development role where skills can be
-        developed further under guidance within a professional engineering team.
+        Comfortable working with JavaScript/TypeScript, Angular, Node.js/Express, MongoDB, and Python-based tools.
+        Seeking an entry-level software development role where I can contribute to real product features, learn from
+        experienced engineers, and grow into full-stack ownership.
       </p>
     </section>
 
     <section class="card">
       <h2>Technical Skills</h2>
 
-     <div class="grid-2 skills-split">
-
+      <div class="grid-2 skills-split">
         <div>
           <h3>Languages</h3>
           <ul class="bullets">
@@ -77,78 +76,85 @@
 
           <h3>Frontend Development</h3>
           <ul class="bullets">
-            <li>Angular (components, services, routing fundamentals, API consumption)</li>
-            <li>Responsive CSS (Flexbox, Grid), Bootstrap basics</li>
-            <li>DOM manipulation</li>
-          </ul> 
-          
+            <li>Angular (components, services, routing, auth guards, API consumption)</li>
+            <li>Responsive CSS (Flexbox, Grid)</li>
+            <li>Form UX and validation, DOM manipulation</li>
+          </ul>
+
           <h3>Databases</h3>
           <ul class="bullets">
-            <li>SQLite, MySQL</li>
-            <li>MongoDB (basic CRUD)</li>
-            <li>PostgreSQL (upcoming)</li>
+            <li>MongoDB (Mongoose), SQLite, MySQL</li>
+            <li>PostgreSQL (learning)</li>
           </ul>
         </div>
 
         <div>
           <h3>Backend &amp; APIs</h3>
           <ul class="bullets">
-            <li>Node.js, Express (REST endpoints, middleware)</li>
-            <li>Django (ORM, CRUD)</li>
-            <li>HTTP/HTTPS, JSON, fetch/AJAX</li>
-            <li>Async JavaScript (Promises, async/await)</li>
+            <li>Node.js, Express (REST APIs, middleware, CORS)</li>
+            <li>JWT authentication (login, register, password reset flows)</li>
+            <li>HTTP/HTTPS, JSON, async JavaScript (Promises, async/await)</li>
           </ul>
-
-         
 
           <h3>Tools &amp; Workflow</h3>
           <ul class="bullets">
             <li>Git, GitHub, NPM, VS Code</li>
-            <li>Debugging fundamentals</li>
-            <li>Basic system modelling (ERD)</li>
+            <li>Deployment: Vercel (frontend + serverless), environment variables</li>
+            <li>Debugging fundamentals, basic system modelling (ERD)</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>Software Projects &amp; Training Experience</h2>
+      <h2>Selected Projects</h2>
 
       <article class="item">
-        <h3>Angular &amp; TypeScript Application <span class="muted">(Training Project)</span></h3>
+        <div class="row">
+          <h3 class="no-margin">SiteTracker — Full Stack Site Progress Tracker</h3>
+          <div class="muted">Angular 17 • Node.js/Express • MongoDB • PDFKit • Cloudinary</div>
+        </div>
+        <div class="muted">
+          Live:
+          <a href="https://sitelog-frontend-gir83hunv-murat-karabiyiks-projects.vercel.app" target="_blank" rel="noreferrer">
+            sitelog-frontend…vercel.app
+          </a>
+        </div>
         <ul class="bullets">
-          <li>Designed and implemented Angular components using TypeScript.</li>
-          <li>Used services, data binding, and basic routing.</li>
-          <li>Consumed REST API data in the frontend.</li>
-          <li>Applied typing to improve code clarity and maintainability.</li>
+          <li>Built a full-stack platform for daily logs, snagging/defects, inspections, and structured reporting.</li>
+          <li>Implemented JWT auth (register/login/me) and protected routes with frontend auth guards.</li>
+          <li>Added evidence attachments (images/PDFs) via Cloudinary and generated PDF reports by date range using PDFKit.</li>
+          <li>Deployed frontend and serverless backend on Vercel with environment configuration and strict CORS handling.</li>
         </ul>
       </article>
 
       <article class="item">
-        <h3>Node.js &amp; Express REST API <span class="muted">(Training Project)</span></h3>
+        <div class="row">
+          <h3 class="no-margin">CivTech Auditor Pro — As-Built Verification (DXF + Survey CSV)</h3>
+          <div class="muted">Python • Streamlit • Pandas • Plotly • ezdxf • XlsxWriter</div>
+        </div>
         <ul class="bullets">
-          <li>Built beginner-level RESTful endpoints.</li>
-          <li>Implemented routing and simple middleware.</li>
-          <li>Returned structured JSON responses for client applications.</li>
+          <li>Developed a web tool to QA as-built survey points against CAD design geometry with pass/fail tolerance checks.</li>
+          <li>Implemented a 3D deviation engine calculating horizontal (plan) and vertical (elevation) errors.</li>
+          <li>Built real-time coordinate nudging (Easting/Northing/Elevation) for aligning survey data to design datums.</li>
+          <li>Exported audited outputs: verified Excel audit trail and colour-coded DXF for AutoCAD review.</li>
+          <li><span class="muted">Repository private — available on request.</span></li>
         </ul>
       </article>
 
       <article class="item">
-        <h3>Django Backend Application <span class="muted">(Training Project)</span></h3>
+        <div class="row">
+          <h3 class="no-margin">Council Tax App — GOV-Style Form UI (Demo)</h3>
+          <div class="muted">HTML • CSS • JavaScript</div>
+        </div>
+        <div class="muted">
+          Live:
+          <a href="https://council-tax-app.vercel.app" target="_blank" rel="noreferrer">council-tax-app.vercel.app</a>
+        </div>
         <ul class="bullets">
-          <li>Created Django projects with apps and models.</li>
-          <li>Used Django ORM for database interaction.</li>
-          <li>Implemented basic CRUD functionality.</li>
-        </ul>
-      </article>
-
-      <article class="item">
-        <h3>Relational Database Projects (SQLite &amp; MySQL)</h3>
-        <ul class="bullets">
-          <li>Designed normalized schemas (3NF).</li>
-          <li>Implemented joins, views, and aggregate queries.</li>
-          <li>Wrote and tested 10+ SQL queries for reporting and filtering.</li>
-          <li>Used SQLite for offline-first and embedded database scenarios.</li>
+          <li>Built a multi-section form UI with clear validation feedback, improved UX, and accessible structure (fieldset/legend).</li>
+          <li>Implemented UK-specific validation/formatting (postcode formatting and UK phone number patterns).</li>
+          <li>Added UX enhancements: loading states, success confirmation, scroll-to-first-error, and character counter.</li>
         </ul>
       </article>
     </section>
@@ -183,16 +189,11 @@
           <div class="muted">August 2025 – Present</div>
         </div>
         <ul class="bullets">
-          <li>Web fundamentals: HTML5, CSS3 (Responsive UI, Flexbox, Grid), Bootstrap basics</li>
-          <li>JavaScript (ES6+), DOM manipulation, async JavaScript</li>
-          <li>TypeScript fundamentals for maintainable code</li>
+          <li>JavaScript/TypeScript fundamentals, async programming, DOM manipulation</li>
           <li>Angular fundamentals: components, services, routing, API consumption</li>
-          <li>Backend basics: Node.js &amp; Express (REST APIs), Django (ORM, CRUD)</li>
-          <li>APIs &amp; Web: HTTP/HTTPS, JSON, AJAX/fetch, client–server fundamentals</li>
-          <li>Databases: SQL (schema design, joins), SQLite, MySQL; PostgreSQL (learning)</li>
-          <li>Tooling: Git/GitHub, NPM, VS Code, debugging fundamentals</li>
-          <li>Deployment &amp; production concepts (intro): environment variables, security basics, hosting workflows</li>
-          <li>Portfolio development with React (planned) and frontend–backend integration</li>
+          <li>Backend fundamentals: Node.js &amp; Express (REST APIs); Django basics</li>
+          <li>Databases: SQL basics (schema design, joins), SQLite, MySQL; MongoDB CRUD</li>
+          <li>Tooling &amp; delivery: Git/GitHub, NPM, VS Code, environment variables, deployment basics</li>
         </ul>
       </article>
 
@@ -216,8 +217,8 @@
     <section class="card">
       <h2>Career Objective</h2>
       <p>
-        To secure a Junior Software Developer / Junior Backend / Junior Frontend (Angular) role where I can apply my
-        foundational programming skills, continue learning modern frameworks, and grow into a productive software engineer.
+        To secure a Junior Full Stack Developer / Junior Backend / Junior Frontend (Angular) role where I can contribute to real
+        product features, strengthen my engineering fundamentals, and grow into a productive software engineer.
       </p>
     </section>
 

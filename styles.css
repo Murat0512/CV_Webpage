@@ -44,6 +44,12 @@ a {
 }
 a:hover { text-decoration: underline; }
 
+/* Prevent long URLs from breaking layout (PDF + mobile) */
+a, .contact a, .muted a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .page {
   max-width: var(--maxw);
   margin: 18px auto 40px auto;
@@ -171,6 +177,7 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
+
 /* =========================================================
    Technical Skills – Equal split with vertical divider
    ========================================================= */
@@ -219,6 +226,10 @@ p {
 }
 
 .item { margin-top: 8px; }
+
+/* Slightly tighter typography for dense sections (projects) */
+.item h3 { margin-top: 10px; }
+.item .muted { margin-top: 4px; }
 
 .row {
   display: flex;
@@ -284,10 +295,45 @@ p {
     --muted: #374151;
     --border: rgba(17, 24, 39, 0.15);
     --shadow: none;
+
+    /* Tighten print spacing to help fit ≤ 2 pages */
+    --pad: 14px;
+    --radius: 0px;
   }
 
   .no-print { display: none !important; }
-  .page { margin: 0; padding: 0; max-width: none; }
-  .card { box-shadow: none; margin: 10px 0; }
+
+  .page {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .card {
+    box-shadow: none;
+    margin: 8px 0;
+    padding: var(--pad);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep headings compact */
+  h2 { margin: 0 0 8px 0; font-size: 16px; }
+  h3 { margin: 10px 0 6px 0; font-size: 14px; }
+
+  /* Reduce paragraph spacing slightly */
+  p { margin: 8px 0; line-height: 1.45; }
+
+  /* Bullets: tighter for print */
+  .bullets li { margin: 4px 0; }
+
+  /* Avoid link styling issues in PDF */
   a { color: #111827; text-decoration: none; }
+
+  /* Keep header from wasting vertical space */
+  .name { font-size: 30px; }
+  .role { margin-top: 6px; }
+
+  /* Keep two-column skills divider from printing oddly on some browsers */
+  .skills-split::after { display: none; }
 }
